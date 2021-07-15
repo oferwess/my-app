@@ -1,8 +1,6 @@
 node{
-tools {
-    jdk 'Java-jdk-1.8'
-  }	
   stage('SCM Checkout'){
+	def JAVA_HOME = tool name: 'Java-jdk-1.8', type: 'jdk'
      git 'https://github.com/oferwess/my-app/'
   }
   stage('Compile-Package'){
