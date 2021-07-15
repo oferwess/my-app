@@ -3,6 +3,7 @@ node{
       git 'https://github.com/oferwess/my-app/'branch: "${params.branch}"
   }
   stage('Compile-Package'){
-    sh 'mvn package'
+	def mvnHOME = tool name: 'maven-3.8.1', type: 'maven'
+    sh "${mvnHOME}/bin/mvn package"
   }
 }
